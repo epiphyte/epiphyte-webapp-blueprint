@@ -1,0 +1,4 @@
+.terraform
+.terraform*
+prod.tfvars
+dev.tfvars
