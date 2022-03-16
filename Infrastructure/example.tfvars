@@ -19,3 +19,5 @@ API_DOMAIN = "api.example.com"
 ### DynamoDB Tables =================================
 USER_PROFILES_TABLE_NAME = "UserProfiles"
 
+### Cognito =================================
+COGNITO_USER_POOL_NAME = "BLUE_PRINT_WEBAPP"

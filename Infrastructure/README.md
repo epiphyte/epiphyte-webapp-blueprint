@@ -28,12 +28,12 @@ To destroy everything in development (Use it with care):
 
 ### 00-Main.tf
 Describes the AWS deployment region, the location where the Terraform state is going to be stored 
-and the root domain of the new application  
+and the root domain of the new application.
 
 ### 20-S3.tf
 
 Specifies the S3 buckets for storing the application frontend and the user
-information
+information.
 
 
 ### 30-CloudFront.tf
@@ -51,13 +51,15 @@ AWS API gateway configuration.
 
 ### 60-DynamoDB.tf
 
-Describes the AWS DynamoDB tables used in the application
+Describes the AWS DynamoDB tables used in the application.
 
 
 ### 70-SES.tf
 AWS Simple Email Service configuration for user notification such as welcome 
 email and password reset.
 
+### 90-Cognito.tf
+AWS Cognito User Pool which serves as a way to identify users in the application.
 
 ## TODO
 
@@ -65,5 +67,5 @@ Implement configuration of the AWS Cognito user pools.
 This will be included in file 10-Cognito.tf
 
 
-Copyright (c) 2021, Epiphyte LLC (https://www.epiphyte.io)
+Copyright (c) 2022, Epiphyte LLC (https://www.epiphyte.io)
 

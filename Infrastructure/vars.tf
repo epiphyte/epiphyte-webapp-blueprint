@@ -66,3 +66,10 @@ variable "WILDCARD_CERT_NAME" {
 variable "USER_PROFILES_TABLE_NAME" {
   type = string
 }
+
+
+### Cognito Configuration =================================
+#User Pool Name
+variable "COGNITO_USER_POOL_NAME" {
+  type = string
+}
