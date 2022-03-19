@@ -1,4 +1,4 @@
-AWS_PROFILE_NAME:=ExampleAPP
+AWS_PROFILE_NAME:=default
 
 init:
 	AWS_PROFILE=$(AWS_PROFILE_NAME) terraform init

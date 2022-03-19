@@ -26,7 +26,7 @@ provider "aws" {
 # Where to store the states of the terraform infrastructure
 terraform {
 	backend "s3" {
-        bucket = "devops"
+        bucket = "blueprint-devops"
         key = "Infrastrucutre"
         region= "us-east-1"
     }

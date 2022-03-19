@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2021 Epiphyte LLC
+Copyright (c) 2021-2022 Epiphyte LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -23,19 +23,34 @@ E-mail: jose@epiphyte.io
  */
 resource "aws_s3_bucket" "frontend_bucket" {
   bucket = var.FRONTEND_DOMAIN
-  acl    = "public-read"
-  policy = file("policies/frontend_bucket_policy.json")
-  
-  website {
-    index_document = "index.html"
-    error_document = "index.html"
-  }
 
   tags = {
 		PROJ = var.PROJ
 		CONTACT = var.CONTACT
 		STATUS = var.STATUS
 	}
+}
+
+resource "aws_s3_bucket_acl" "frontend_bucket" {
+  bucket = aws_s3_bucket.frontend_bucket.id
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_policy" "frontend_bucket" {
+  bucket = aws_s3_bucket.frontend_bucket.id
+  policy = file("policies/frontend_bucket_policy.json")
+}
+
+resource "aws_s3_bucket_website_configuration" "frontend_bucket" {
+  bucket = aws_s3_bucket.frontend_bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
 }
 
 
